@@ -4,5 +4,5 @@ To start developing
 
 ```bash
 npm i
-npm run devd
+npm run dev
 ```
