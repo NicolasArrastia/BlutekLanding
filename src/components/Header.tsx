@@ -19,7 +19,7 @@ const NAVBAR: { goTo: LandingSections; label: string }[] = [
 
 const Header = () => {
   return (
-    <div className="flex w-full py-4 px-5 justify-between items-center absolute top-0 left-0 z-50 bg-white shadow-md">
+    <header className="flex w-full py-4 px-5 justify-between items-center absolute top-0 left-0 z-50 bg-white shadow-md">
       <div className="flex items-center gap-2 text-neutral-950 font-semibold text-2xl">
         <SVGIcon src={BlutekLogo} color="black" size={30} />
         Blutek
@@ -32,7 +32,7 @@ const Header = () => {
         ))}
       </nav>
       <Button>Contáctanos</Button>
-    </div>
+    </header>
   );
 };
 
