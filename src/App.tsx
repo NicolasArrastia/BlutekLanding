@@ -1,3 +1,4 @@
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import AboutUsSection from "./sections/AboutUsSection";
 import ContactSection from "./sections/ContactSection";
@@ -16,6 +17,7 @@ const App = () => {
       <ProcessSection />
       <PortfolioSection />
       <ContactSection />
+      <Footer />
     </div>
   );
 };
