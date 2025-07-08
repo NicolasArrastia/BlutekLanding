@@ -1,6 +1,5 @@
 import {
   ArtGalleryIcon,
-  BlutekLogo,
   CodeIcon,
   GearIcon,
   LightBulbIcon,
