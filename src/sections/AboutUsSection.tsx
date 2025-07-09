@@ -1,4 +1,5 @@
 import { CheckCircleIcon, HandshakeIcon, TargetIcon } from "../assets/svg";
+import { Section } from "../components/Section";
 import { SVGIcon } from "../components/SVGIcon";
 
 const SKILLS: { title: string; icon: string; description: string }[] = [
@@ -23,10 +24,10 @@ const SKILLS: { title: string; icon: string; description: string }[] = [
 
 const AboutUsSection = () => {
   return (
-    <section className="flex flex-col items-center py-20 px-5">
-      <h2 className="text-4xl text-neutral-950 mb-8">
+    <Section title={["Sobre", "Nosotros"]} id="about-us">
+      {/* <h2 className="text-4xl text-neutral-950 mb-8">
         Sobre <span className="text-center font-semibold">Nosotros</span>
-      </h2>
+      </h2> */}
       <span className="text-neutral-950 font-semibold text-2xl text-center mb-5">
         "Blutek es un equipo frontend que cumple. Diseñamos con presición y
         entregamos en tiempo y forma."
@@ -50,7 +51,7 @@ const AboutUsSection = () => {
           </div>
         ))}
       </div>
-    </section>
+    </Section>
   );
 };
 
