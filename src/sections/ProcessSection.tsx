@@ -1,3 +1,5 @@
+import { Section } from "../components/Section";
+
 const PROCESSES_STEPS: { title: string; description: string }[] = [
   {
     title: "Descubrimiento",
@@ -23,10 +25,7 @@ const PROCESSES_STEPS: { title: string; description: string }[] = [
 
 const ProcessSection = () => {
   return (
-    <section>
-      <h2>
-        Nuestro <span>Proceso</span>
-      </h2>
+    <Section title={["Nuestro", "Proceso"]} id="process">
       <span>
         Un enfoque estructurado que garantiza resultado excepcionales en cada
         proyecto.
@@ -43,7 +42,7 @@ const ProcessSection = () => {
           </div>
         ))}
       </div>
-    </section>
+    </Section>
   );
 };
 
