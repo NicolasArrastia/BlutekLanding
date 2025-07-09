@@ -1,5 +1,8 @@
 type Props = {
   children: React.ReactNode;
+  type?: "button" | "submit" | "reset"; // agrego
+  style?: React.CSSProperties;  // agrego
+
 };
 
 const Button = ({ children }: Props) => {
