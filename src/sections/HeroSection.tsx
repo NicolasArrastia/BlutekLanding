@@ -1,6 +1,6 @@
 const HeroSection = () => {
   return (
-    <div className="relative flex text-neutral-950 flex-col items-center justify-center h-screen bg-gradient-to-b from-white to-neutral-100">
+    <section id="hero-section" className="relative flex text-neutral-950 flex-col items-center justify-center h-screen bg-gradient-to-b from-white to-neutral-100">
       <div className="absolute top-[35%] left-[12%] size-45 rounded-full from-neutral-400 to-transparent bg-gradient-to-b"></div>
       <div className="absolute top-[52%] left-[60%] size-20 rounded-full from-neutral-400 to-transparent bg-gradient-to-b"></div>
 
@@ -16,7 +16,7 @@ const HeroSection = () => {
         Somos Blutek, un equipo especializado en soluciones digitales
         profesionales
       </span>
-    </div>
+    </section>
   );
 };
 

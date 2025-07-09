@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import Button from "../components/Button";
 
 const ContactSection = () => {
-  const resendApiKey = import.meta.env.VITE_RESEND_API_KEY;
-
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -25,28 +23,15 @@ const ContactSection = () => {
     setStatus("Enviando...");
 
     try {
-      const res = await fetch("http://api.resend.com/emails", {
+      const res = await fetch("http://localhost:3000/api/resend/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${resendApiKey}`,
         },
-        body: JSON.stringify({
-          from: "Acme <onboarding@resend.dev>",
-          to: ["cristianpabloayala@hotmail.com"],
-          subject: `Nuevo mensaje de ${form.name}`,
-          html: `
-            <p><strong>Nombre:</strong> ${form.name}</p>
-            <p><strong>Email:</strong> ${form.email}</p>
-            <p><strong>Teléfono:</strong> ${form.phone}</p>
-            <p><strong>Mensaje:</strong></p>
-            <p>${form.message}</p>
-          `,
-        }),
+        body: JSON.stringify(form),
       });
 
-      if (!res.ok) throw new Error("Error enviando el email");
-
+      if (!res.ok) throw new Error("Error enviando el formulario");
       setStatus("¡Mensaje enviado con éxito!");
       setForm({ name: "", email: "", phone: "", message: "" });
     } catch (error) {
