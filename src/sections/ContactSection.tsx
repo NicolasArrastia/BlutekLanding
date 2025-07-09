@@ -90,9 +90,7 @@ const ContactSection = () => {
           className="border border-neutral-300 rounded-md p-3 text-neutral-800 resize-none focus:outline-none focus:ring-2 focus:ring-black"
         />
         <div className="flex justify-center">
-          <Button type="submit" style={{ cursor: "pointer" }}>
-            Enviar mensaje
-          </Button>
+          <Button type="submit">Enviar mensaje</Button>
         </div>
         {status && (
           <p className="text-center mt-2 text-sm text-neutral-600">{status}</p>

@@ -1,13 +1,11 @@
-type Props = {
-  children: React.ReactNode;
-  type?: "button" | "submit" | "reset"; // agrego
-  style?: React.CSSProperties;  // agrego
+type Props = React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-};
-
-const Button = ({ children }: Props) => {
+const Button = ({ children, type = "submit" }: Props) => {
   return (
-    <button className="bg-neutral-950 font-medium text-white px-4 p-2 rounded-sm">
+    <button
+      type={type}
+      className="bg-neutral-950 font-medium text-white px-4 p-2 rounded-sm cursor-pointer"
+    >
       {children}
     </button>
   );
