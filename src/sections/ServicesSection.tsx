@@ -5,6 +5,7 @@ import {
   LightBulbIcon,
   RobotIcon,
 } from "../assets/svg";
+import { Section } from "../components/Section";
 import { SVGIcon } from "../components/SVGIcon";
 
 const SERVICES: { title: string; icon: string; description: string }[] = [
@@ -42,10 +43,7 @@ const SERVICES: { title: string; icon: string; description: string }[] = [
 
 const ServicesSection = () => {
   return (
-    <section>
-      <h2 className="text-4xl text-neutral-950 mb-8">
-        Nuestros <span className="font-semibold">Servicios</span>
-      </h2>
+    <Section title={["Nuestros", "Servicios"]} id="services">
       <span className="text-lg text-center max-w-2xl mx-auto">
         Soluciones digitales completas, desde el concepto hasta la
         implementación final.
@@ -67,7 +65,7 @@ const ServicesSection = () => {
           </div>
         ))}
       </div>
-    </section>
+    </Section>
   );
 };
 
