@@ -9,7 +9,7 @@ import ServicesSection from "./sections/ServicesSection";
 
 const App = () => {
   return (
-    <div className="[&>section]:flex [&>section]:flex-col [&>section]:items-center [&>section]:py-20 [&>section]:px-5">
+    <div>
       <Header />
       <HeroSection />
       <AboutUsSection />
