@@ -1,5 +1,5 @@
 import { BlutekLogo } from "../assets/svg/index.ts";
-import Button from "./Button.tsx";
+import Button from "./Form/Button.tsx";
 import { SVGIcon } from "./SVGIcon.tsx";
 
 type LandingSections =
