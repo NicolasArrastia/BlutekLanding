@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Button from "../components/Button";
+import { Section } from "../components/Section";
 
 const ContactSection = () => {
   const [form, setForm] = useState({
@@ -41,37 +42,43 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="flex flex-col items-center py-20 px-5">
-      <h2 className="text-4xl text-neutral-950 mb-8 text-center font-semibold">
-        Contáctanos
-      </h2>
+    <Section id="contact" title={["Hablemos de tu", "Proyecto"]}>
       <p className="text-neutral-600 text-lg mb-10 text-center max-w-xl">
-        ¿Está interesado en nuestros servicios? Completa el formulario y nos
-        pondremos en contacto contigo.
+        ¿Tenés una idea? Nos encantaría escucharla y ayudarte a hacerla realidad
       </p>
 
       <form
         onSubmit={handleSubmit}
-        className="w-full max-w-xl flex flex-col gap-4"
+        className="w-full max-w-xl flex flex-col gap-4 p-6 rounded-md mx-auto bg-white shadow-md"
       >
-        <input
-          type="text"
-          name="name"
-          placeholder="Nombre"
-          value={form.name}
-          onChange={handleChange}
-          required
-          className="border border-neutral-300 rounded-md p-3 text-neutral-800 focus:outline-none focus:ring-2 focus:ring-black"
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Correo electrónico"
-          value={form.email}
-          onChange={handleChange}
-          required
-          className="border border-neutral-300 rounded-md p-3 text-neutral-800 focus:outline-none focus:ring-2 focus:ring-black"
-        />
+        <div className="flex justify-between gap-4">
+          <div>
+            <label htmlFor="name">Nombre:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Nombre"
+              value={form.name}
+              onChange={handleChange}
+              required
+              className="w-full border border-neutral-300 rounded-md p-3 text-neutral-800 focus:outline-none focus:ring-2 focus:ring-black"
+            />
+          </div>
+          <div>
+            <label htmlFor="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Correo electrónico"
+              value={form.email}
+              onChange={handleChange}
+              required
+              className="w-full border border-neutral-300 rounded-md p-3 text-neutral-800 focus:outline-none focus:ring-2 focus:ring-black"
+            />
+          </div>
+        </div>
         <input
           type="tel"
           name="phone"
@@ -96,7 +103,7 @@ const ContactSection = () => {
           <p className="text-center mt-2 text-sm text-neutral-600">{status}</p>
         )}
       </form>
-    </section>
+    </Section>
   );
 };
 
