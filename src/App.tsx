@@ -6,6 +6,7 @@ import HeroSection from "./sections/HeroSection";
 import PortfolioSection from "./sections/PortfolioSection";
 import ProcessSection from "./sections/ProcessSection";
 import ServicesSection from "./sections/ServicesSection";
+import { ToastContainer } from "react-toastify";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
       <PortfolioSection />
       <ContactSection />
       <Footer />
+      <ToastContainer />
     </div>
   );
 };
