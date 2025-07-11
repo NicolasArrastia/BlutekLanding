@@ -29,10 +29,13 @@ const Header = () => {
         scrolled ? "bg-white shadow-md" : "bg-transparent"
       }`}
     >
-      <div className="flex items-center gap-2 text-neutral-950 font-semibold text-2xl">
-        <SVGIcon src={BlutekLogo} color="black" size={30} />
+      <a
+        href="#"
+        className="flex items-center gap-2 text-neutral-900 font-semibold text-2xl"
+      >
+        <SVGIcon src={BlutekLogo} className="!bg-neutral-950" size={30} />
         Blutek
-      </div>
+      </a>
       <nav className="hidden md:flex gap-5 text-neutral-600 text-lg m-auto">
         {NAVBAR.map((item) => (
           <a key={item.goTo} href={`#${item.goTo}`}>
