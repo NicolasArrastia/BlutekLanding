@@ -12,10 +12,10 @@ type FormData = {
 };
 
 const INITIAL_FORM_DATA: FormData = {
-  name: "nico",
-  email: "nico@gmail.com",
-  phone: "1234",
-  message: "hola que tal",
+  name: "",
+  email: "",
+  phone: "",
+  message: "",
 };
 
 const EMAIL_TO = "nicolasarrastia@gmail.com";
