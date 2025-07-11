@@ -7,6 +7,7 @@ import {
 } from "../assets/svg";
 import { Section } from "../components/Section";
 import { SVGIcon } from "../components/SVGIcon";
+import { Subtitle } from "../components/ui/Subtitle";
 
 const SERVICES: { title: string; icon: string; description: string }[] = [
   {
@@ -44,21 +45,24 @@ const SERVICES: { title: string; icon: string; description: string }[] = [
 const ServicesSection = () => {
   return (
     <Section title={["Nuestros", "Servicios"]} id="services">
-      <span className="text-lg text-center max-w-2xl mx-auto">
+      <Subtitle>
         Soluciones digitales completas, desde el concepto hasta la
         implementación final.
-      </span>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10 max-w-4xl mx-auto">
+      </Subtitle>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10 mx-auto">
         {SERVICES.map((service) => (
           <div
             key={service.title}
-            className="flex flex-col items-start border border-neutral-300 rounded-md p-4"
+            className="group flex flex-col gap-1 border border-neutral-200 bg-neutral-50 p-4 rounded-lg shadow-md hover:shadow-lg transition-transform transform hover:scale-105"
           >
-            <div className="bg-neutral-200 p-4 rounded-md">
-              <SVGIcon src={service.icon} size={40} color="black" />
+            <div className="bg-neutral-200 p-4 rounded-md w-fit group-hover:bg-blue-900 transition">
+              <SVGIcon
+                src={service.icon}
+                size={40}
+                className="group-hover:!bg-white transition"
+              />
             </div>
-            <h3 className="text-xl font-medium text-neutral-950 my-2">
+            <h3 className="text-xl font-bold text-neutral-950 my-2 group-hover:text-blue-900">
               {service.title}
             </h3>
             <p className="text-neutral-600">{service.description}</p>

@@ -24,7 +24,7 @@ const ProjectCard = ({
       <h4 className="font-semibold group-hover:text-blue-900 text-lg">
         {title}
       </h4>
-      <p className="text-neutral-500 font-thin">{description}</p>
+      <p className="text-neutral-500 font-thin mb-4">{description}</p>
       <div className="flex flex-wrap gap-2 mt-auto">
         {tags.map((tag, index) => (
           <span
@@ -38,31 +38,6 @@ const ProjectCard = ({
     </div>
   );
 };
-// <div className="group flex flex-col items-center gap-4 border border-black">
-//   <div className="bg-white rounded-lg p-6 shadow-md">
-//     <div className="overflow-hidden rounded-md">
-//       <img
-//         src={image}
-//         alt={title}
-//         className="w-full h-48 object-cover rounded-md hover:scale-105 transition-transform duration-300"
-//       />
-//     </div>
-
-//     <h3 className="text-xl font-semibold mb-2">{title}</h3>
-//     <p className="text-sm text-neutral-600 mb-4">{description}</p>
-
-//     <div className="flex flex-wrap gap-2">
-//       {tags.map((tag, tagIndex) => (
-//         <span
-//           key={tagIndex}
-//           className="bg-blue-50 text-blue-800 text-xs px-3 py-1 rounded-md"
-//         >
-//           {tag}
-//         </span>
-//       ))}
-//     </div>
-//   </div>
-// </div>
 
 const PROJECTS: ProjectType[] = [
   {
@@ -101,7 +76,7 @@ const PortfolioSection = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-12">
         {PROJECTS.map((project, index) => (
           <ProjectCard data={project} key={index} />
         ))}

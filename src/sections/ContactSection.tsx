@@ -1,44 +1,46 @@
 import React, { useState } from "react";
-import Button from "../components/Button";
+import Button from "../components/Form/Button";
 import { Section } from "../components/Section";
+import { Input } from "../components/Form/Input";
+import { TextArea } from "../components/Form/TextArea";
+import { toast } from "react-toastify";
+
+type FormData = {
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+};
+
+const INITIAL_FORM_DATA: FormData = {
+  name: "",
+  email: "",
+  phone: "",
+  message: "",
+};
 
 const ContactSection = () => {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-
-  const [status, setStatus] = useState<string | null>(null);
+  const [form, setForm] = useState<FormData>(INITIAL_FORM_DATA);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
+    console.log(e.target.value);
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus("Enviando...");
+    console.log(form);
 
-    try {
-      const res = await fetch("http://localhost:3000/api/resend/send-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
-      });
-
-      if (!res.ok) throw new Error("Error enviando el formulario");
-      setStatus("¡Mensaje enviado con éxito!");
-      setForm({ name: "", email: "", phone: "", message: "" });
-    } catch (error) {
-      console.error(error);
-      setStatus("Ocurrió un error. Intenta de nuevo.");
-    }
+    const to = form.email;
+    const subject = encodeURIComponent("Nuevo mensaje de contacto");
+    const body = encodeURIComponent(
+      `Nombre: ${form.name}\nEmail: ${form.email}\nTeléfono: ${form.phone}\nMensaje: ${form.message}`
+    );
+    window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+    // toast.success("Mensaje enviado correctamente");
   };
 
   return (
@@ -49,59 +51,39 @@ const ContactSection = () => {
 
       <form
         onSubmit={handleSubmit}
-        className="w-full max-w-xl flex flex-col gap-4 p-6 rounded-md mx-auto bg-white shadow-md"
+        className="w-full max-w-xl flex flex-col gap-4 p-6 rounded-md mx-auto bg-white shadow-md border border-neutral-200"
       >
         <div className="flex justify-between gap-4">
-          <div>
-            <label htmlFor="name">Nombre:</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Nombre"
-              value={form.name}
-              onChange={handleChange}
-              required
-              className="w-full border border-neutral-300 rounded-md p-3 text-neutral-800 focus:outline-none focus:ring-2 focus:ring-black"
-            />
-          </div>
-          <div>
-            <label htmlFor="email">Email:</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Correo electrónico"
-              value={form.email}
-              onChange={handleChange}
-              required
-              className="w-full border border-neutral-300 rounded-md p-3 text-neutral-800 focus:outline-none focus:ring-2 focus:ring-black"
-            />
-          </div>
+          <Input
+            label="Nombre:"
+            placeholder="Tu nombre"
+            name="name"
+            value={form.name}
+            handleChange={handleChange}
+          />
+          <Input
+            label="Email:"
+            name="email"
+            placeholder="tu@email.com"
+            value={form.email}
+            handleChange={handleChange}
+          />
         </div>
-        <input
-          type="tel"
+        <Input
+          label="Teléfono:"
           name="phone"
-          placeholder="Número de teléfono"
+          placeholder="(011) 1234-5678"
           value={form.phone}
-          onChange={handleChange}
-          className="border border-neutral-300 rounded-md p-3 text-neutral-800 focus:outline-none focus:ring-2 focus:ring-black"
+          handleChange={handleChange}
         />
-        <textarea
-          name="message"
-          placeholder="Tu mensaje"
-          rows={5}
-          value={form.message}
-          onChange={handleChange}
-          required
-          className="border border-neutral-300 rounded-md p-3 text-neutral-800 resize-none focus:outline-none focus:ring-2 focus:ring-black"
+
+        <TextArea
+          name={form.message}
+          label={"Mensaje:"}
+          placeholder="Escribinos tu mensaje"
+          handleChange={handleChange}
         />
-        <div className="flex justify-center">
-          <Button type="submit">Enviar mensaje</Button>
-        </div>
-        {status && (
-          <p className="text-center mt-2 text-sm text-neutral-600">{status}</p>
-        )}
+        <Button type="submit">Enviar mensaje</Button>
       </form>
     </Section>
   );

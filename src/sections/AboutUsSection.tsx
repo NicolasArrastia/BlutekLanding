@@ -1,6 +1,7 @@
 import { CheckCircleIcon, HandshakeIcon, TargetIcon } from "../assets/svg";
 import { Section } from "../components/Section";
 import { SVGIcon } from "../components/SVGIcon";
+import { Subtitle } from "../components/ui/Subtitle";
 
 const SKILLS: { title: string; icon: string; description: string }[] = [
   {
@@ -25,18 +26,15 @@ const SKILLS: { title: string; icon: string; description: string }[] = [
 const AboutUsSection = () => {
   return (
     <Section title={["Sobre", "Nosotros"]} id="about-us">
-      {/* <h2 className="text-4xl text-neutral-950 mb-8">
-        Sobre <span className="text-center font-semibold">Nosotros</span>
-      </h2> */}
       <span className="text-neutral-950 font-semibold text-2xl text-center mb-5">
         "Blutek es un equipo frontend que cumple. Diseñamos con presición y
         entregamos en tiempo y forma."
       </span>
       <div className="h-px w-20 my-5 m-auto bg-black"></div>
-      <span className="text-neutral-600 text-lg text-center max-w-3xl">
+      <Subtitle>
         Cada proyecto es una oportunidad para demostrar que la calidad técnica y
         el diseño cuidadoso pueden coexistir en perfecta armonía.
-      </span>
+      </Subtitle>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10 max-w-4xl">
         {SKILLS.map((skill) => (
