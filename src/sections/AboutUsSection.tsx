@@ -26,11 +26,11 @@ const SKILLS: { title: string; icon: string; description: string }[] = [
 const AboutUsSection = () => {
   return (
     <Section title={["Sobre", "Nosotros"]} id="about-us">
-      <span className="text-neutral-950 font-semibold text-2xl text-center mb-5">
+      <span className="text-neutral-900 font-semibold text-2xl text-center mb-5">
         "Blutek es un equipo frontend que cumple. Diseñamos con presición y
         entregamos en tiempo y forma."
       </span>
-      <div className="h-px w-20 my-5 m-auto bg-black"></div>
+      <div className="h-px w-20 my-5 m-auto bg-neutral-400"></div>
       <Subtitle>
         Cada proyecto es una oportunidad para demostrar que la calidad técnica y
         el diseño cuidadoso pueden coexistir en perfecta armonía.
