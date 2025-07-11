@@ -1,7 +1,9 @@
+import type { LandingSectionIds } from "../types";
+
 type Props = {
   title: string[];
   children?: React.ReactNode;
-  id?: string; // TODO: Add type for id sections
+  id?: LandingSectionIds; // TODO: Add type for id sections
 };
 
 export const Section = ({ children, title, id }: Props) => {

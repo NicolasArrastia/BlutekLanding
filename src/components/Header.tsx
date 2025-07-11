@@ -1,15 +1,9 @@
 import { BlutekLogo } from "../assets/svg/index.ts";
+import type { LandingSectionIds } from "../types.ts";
 import Button from "./Form/Button.tsx";
 import { SVGIcon } from "./SVGIcon.tsx";
 
-type LandingSections =
-  | "services"
-  | "process"
-  | "projects"
-  | "about-us"
-  | "contact";
-
-const NAVBAR: { goTo: LandingSections; label: string }[] = [
+const NAVBAR: { goTo: LandingSectionIds; label: string }[] = [
   { goTo: "about-us", label: "Nosotros" },
   { goTo: "services", label: "Servicios" },
   { goTo: "process", label: "Proceso" },

@@ -65,7 +65,7 @@ const PROJECTS: ProjectType[] = [
 
 const PortfolioSection = () => {
   return (
-    <Section title={["Nuestros", "Proyectos"]} id="portfolio">
+    <Section title={["Nuestros", "Proyectos"]} id="projects">
       <Subtitle>
         Algunos de los proyectos que hemos desarrollamos con pasión y dedicación
       </Subtitle>
