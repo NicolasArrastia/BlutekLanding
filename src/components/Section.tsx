@@ -8,7 +8,7 @@ export const Section = ({ children, title, id }: Props) => {
   return (
     <section
       id={id}
-      className="flex flex-col items-center py-25 md:px-[20%] even:bg-neutral-100"
+      className="flex flex-col items-center py-25 px-3 md:px-[10%] lg:px-[20%] even:bg-neutral-100"
     >
       <h2 className="inline-flex gap-2 text-center text-3xl md:text-4xl text-neutral-950 mb-8">
         {title.map((str, index) => (

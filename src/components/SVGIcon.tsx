@@ -49,7 +49,6 @@ export const SVGIcon = ({ src, size = 24, color, className }: Props) => {
   console.log(src);
   return (
     <div
-      className={className}
       style={{
         width: dimension,
         height: dimension,
@@ -69,6 +68,7 @@ export const SVGIcon = ({ src, size = 24, color, className }: Props) => {
         // backgroundPosition: "center",
         // backgroundSize: "cover",
       }}
+      className={className}
     />
   );
 };
