@@ -59,7 +59,7 @@ const ServicesSection = () => {
               <SVGIcon
                 src={service.icon}
                 size={40}
-                className="group-hover:!bg-white transition"
+                className="group-hover:!bg-white !bg-blue-950 transition"
               />
             </div>
             <h3 className="text-xl font-bold text-neutral-950 my-2 group-hover:text-blue-900">

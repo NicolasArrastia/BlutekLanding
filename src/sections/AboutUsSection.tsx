@@ -39,13 +39,13 @@ const AboutUsSection = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10 max-w-4xl">
         {SKILLS.map((skill) => (
           <div key={skill.title} className="flex flex-col items-center">
-            <div className="bg-black p-4 rounded-md">
+            <div className="bg-blue-900 p-4 rounded-md">
               <SVGIcon src={skill.icon} size={50} color="white" />
             </div>
-            <h3 className="text-xl font-semibold text-neutral-950 my-2">
+            <h3 className="text-xl font-bold text-neutral-900 my-2">
               {skill.title}
             </h3>
-            <p className="text-neutral-600 text-center">{skill.description}</p>
+            <p className="text-neutral-500 text-center">{skill.description}</p>
           </div>
         ))}
       </div>
