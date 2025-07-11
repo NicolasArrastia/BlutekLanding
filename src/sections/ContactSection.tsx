@@ -3,7 +3,6 @@ import Button from "../components/Form/Button";
 import { Section } from "../components/Section";
 import { Input } from "../components/Form/Input";
 import { TextArea } from "../components/Form/TextArea";
-import { toast } from "react-toastify";
 
 type FormData = {
   name: string;
@@ -40,7 +39,6 @@ const ContactSection = () => {
       `Nombre: ${form.name}\nEmail: ${form.email}\nTeléfono: ${form.phone}\nMensaje: ${form.message}`
     );
     window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
-    // toast.success("Mensaje enviado correctamente");
   };
 
   return (
