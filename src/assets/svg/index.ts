@@ -7,6 +7,7 @@ import CodeIcon from "./code-icon.svg";
 import GearIcon from "./gear-icon.svg";
 import LightBulbIcon from "./lightbulb-icon.svg";
 import RobotIcon from "./robot-icon.svg";
+import WrenchIcon from "./wrench-icon.svg";
 
 export {
   BlutekLogo,
@@ -18,4 +19,5 @@ export {
   GearIcon,
   LightBulbIcon,
   RobotIcon,
+  WrenchIcon,
 };
