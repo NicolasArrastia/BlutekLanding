@@ -55,11 +55,11 @@ const ServicesSection = () => {
             key={service.title}
             className="group flex flex-col gap-1 border border-neutral-200 bg-neutral-50 p-4 rounded-lg shadow-md hover:shadow-lg transition-transform transform hover:scale-105"
           >
-            <div className="bg-neutral-200 p-4 rounded-md w-fit group-hover:bg-blue-900 transition">
+            <div className="bg-slate-200 p-4 rounded-md w-fit group-hover:bg-blue-900 transition">
               <SVGIcon
                 src={service.icon}
                 size={40}
-                className="group-hover:!bg-white !bg-blue-950 transition"
+                className="group-hover:!bg-white !bg-blue-900 transition"
               />
             </div>
             <h3 className="text-xl font-bold text-neutral-950 my-2 group-hover:text-blue-900">
