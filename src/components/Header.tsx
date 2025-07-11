@@ -9,7 +9,6 @@ const NAVBAR: { goTo: LandingSectionIds; label: string }[] = [
   { goTo: "services", label: "Servicios" },
   { goTo: "process", label: "Proceso" },
   { goTo: "projects", label: "Portfolio" },
-  { goTo: "contact", label: "Contacto" },
 ];
 
 const Header = () => {
@@ -25,7 +24,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed w-full py-4 px-5 flex items-center top-0 left-0 z-50 transition-all duration-500 ease-out ${
+      className={`fixed w-full py-4 px-5 flex justify-between md:justify-start items-center top-0 left-0 z-50 transition-all duration-500 ease-out ${
         scrolled ? "bg-white shadow-md" : "bg-transparent"
       }`}
     >
