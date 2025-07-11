@@ -4,6 +4,7 @@ import {
   GearIcon,
   LightBulbIcon,
   RobotIcon,
+  WrenchIcon,
 } from "../assets/svg";
 import { Section } from "../components/Section";
 import { SVGIcon } from "../components/SVGIcon";
@@ -40,6 +41,12 @@ const SERVICES: { title: string; icon: string; description: string }[] = [
     description:
       "Automatizamos procesos para mejorar tu eficiencia y reducir costos, adaptándonos a tu negocio.",
   },
+  {
+    title: "Mantenimiento y Soporte",
+    icon: WrenchIcon,
+    description:
+      "Brindamos mantenimiento continuo y soporte técnico para asegurar que tus sistemas funcionen correctamente y sin interrupciones.",
+  },
 ];
 
 const ServicesSection = () => {
@@ -53,7 +60,7 @@ const ServicesSection = () => {
         {SERVICES.map((service) => (
           <div
             key={service.title}
-            className="group flex flex-col gap-1 border border-neutral-200 bg-neutral-50 p-4 rounded-lg shadow-md hover:shadow-lg transition-transform transform hover:scale-105"
+            className="group flex flex-col items-center gap-1 border border-neutral-200 bg-neutral-50 p-4 rounded-lg shadow-md hover:shadow-lg transition-transform transform hover:scale-105"
           >
             <div className="bg-slate-200 p-4 rounded-md w-fit group-hover:bg-blue-900 transition">
               <SVGIcon
@@ -65,7 +72,9 @@ const ServicesSection = () => {
             <h3 className="text-xl font-bold text-neutral-950 my-2 group-hover:text-blue-900">
               {service.title}
             </h3>
-            <p className="text-neutral-600">{service.description}</p>
+            <p className="text-neutral-600 text-center">
+              {service.description}
+            </p>
           </div>
         ))}
       </div>
