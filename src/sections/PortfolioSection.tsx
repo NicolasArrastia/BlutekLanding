@@ -1,4 +1,5 @@
 import { Section } from "../components/Section";
+import { Subtitle } from "../components/ui/Subtitle";
 
 type ProjectType = {
   title: string;
@@ -65,7 +66,10 @@ const PROJECTS: ProjectType[] = [
 const PortfolioSection = () => {
   return (
     <Section title={["Nuestros", "Proyectos"]} id="portfolio">
-      <div className="flex justify-center gap-8 mb-10 text-center">
+      <Subtitle>
+        Algunos de los proyectos que hemos desarrollamos con pasión y dedicación
+      </Subtitle>
+      <div className="flex justify-center gap-8 mt-5 mb-10 text-center">
         <div>
           <p className="text-3xl font-bold text-blue-900">15+</p>
           <p className="text-sm text-neutral-600">Proyectos finalizados</p>

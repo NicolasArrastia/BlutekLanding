@@ -1,4 +1,5 @@
 import { Section } from "../components/Section";
+import { Subtitle } from "../components/ui/Subtitle";
 
 const PROCESSES_STEPS: { title: string; description: string }[] = [
   {
@@ -26,12 +27,12 @@ const PROCESSES_STEPS: { title: string; description: string }[] = [
 const ProcessSection = () => {
   return (
     <Section title={["Nuestro", "Proceso"]} id="process">
-      <span>
+      <Subtitle>
         Un enfoque estructurado que garantiza resultado excepcionales en cada
         proyecto.
-      </span>
+      </Subtitle>
 
-      <div className="flex flex-col items-start w-full gap-8">
+      <div className="flex flex-col items-start w-full gap-8 mt-8">
         {PROCESSES_STEPS.map((step, index) => (
           <div key={index}>
             <div className="bg-black flex size-14 rounded-sm items-center justify-center text-white text-2xl">
