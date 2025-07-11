@@ -12,11 +12,14 @@ type FormData = {
 };
 
 const INITIAL_FORM_DATA: FormData = {
-  name: "",
-  email: "",
-  phone: "",
-  message: "",
+  name: "nico",
+  email: "nico@gmail.com",
+  phone: "1234",
+  message: "hola que tal",
 };
+
+const EMAIL_TO = "nicolasarrastia@gmail.com";
+const SUBJECT = "Interesado/a en tus servicios";
 
 const ContactSection = () => {
   const [form, setForm] = useState<FormData>(INITIAL_FORM_DATA);
@@ -33,12 +36,23 @@ const ContactSection = () => {
     e.preventDefault();
     console.log(form);
 
-    const to = form.email;
-    const subject = encodeURIComponent("Nuevo mensaje de contacto");
     const body = encodeURIComponent(
-      `Nombre: ${form.name}\nEmail: ${form.email}\nTeléfono: ${form.phone}\nMensaje: ${form.message}`
+      `Hola,
+
+Mi nombre es ${form.name}, te escribo porque estoy interesado/a en contactarte.
+
+Datos de contacto:
+Email: ${form.email}
+Teléfono: ${form.phone}
+
+Mensaje:
+${form.message}
+
+Saludos.`
     );
-    window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+    const url = `https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL_TO}&su=${SUBJECT}&body=${body}`;
+
+    window.open(url, "_blank");
   };
 
   return (
@@ -76,7 +90,8 @@ const ContactSection = () => {
         />
 
         <TextArea
-          name={form.message}
+          name="message"
+          value={form.message}
           label={"Mensaje:"}
           placeholder="Escribinos tu mensaje"
           handleChange={handleChange}
