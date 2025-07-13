@@ -13,7 +13,7 @@ const FOOTER_SECTIONS: { title: string; info: string[] }[] = [
   },
   {
     title: "Tecnologías",
-    info: ["React & Next.js", "Tailwind CSS", "TypeScript", "Strapi"],
+    info: ["React & Next.js", "Tailwind CSS", "TypeScript & Node.js", "Strapi"],
   },
   {
     title: "Contacto",
