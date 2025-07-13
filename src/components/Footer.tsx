@@ -40,7 +40,7 @@ const Footer = () => {
 
       <div className="h-px bg-neutral-700 w-20 my-6" />
 
-      <div className="flex w-full max-w-2xl flex-wrap justify-center items-start">
+      <div className="grid grid-cols-1 md:grid-cols-3 w-full max-w-2xl flex-wrap">
         {FOOTER_SECTIONS.map((section, index) => (
           <div key={index} className="flex flex-col items-center my-4">
             <h3 className="text-lg font-bold mb-2">{section.title}</h3>
