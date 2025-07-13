@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { Section } from "../components/Section";
+import { Subtitle } from "../components/ui/Subtitle";
 
 type StepType = {
   title: string;
@@ -66,24 +68,12 @@ const Step = ({ index, step }: { index: number; step: StepType }) => {
 
 const ProcessSection = () => {
   return (
-    <section className="py-20 bg-white">
+    <Section id="process" title={["Nuestro", "Proceso"]}>
+      <Subtitle>
+        Un enfoque estructurado que garantiza resultados excepcionales en cada
+        proyecto.
+      </Subtitle>
       <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center space-y-4 mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-            Nuestro <span className="text-blue-900">Proceso</span>
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Un enfoque estructurado que garantiza resultados excepcionales en
-            cada proyecto.
-          </p>
-        </motion.div>
-
         <div className="relative max-w-6xl mx-auto">
           <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gray-200 transform -translate-y-1/2 hidden md:block">
             <motion.div
@@ -111,7 +101,7 @@ const ProcessSection = () => {
           className="text-center mt-16"
         ></motion.div>
       </div>
-    </section>
+    </Section>
   );
 };
 
