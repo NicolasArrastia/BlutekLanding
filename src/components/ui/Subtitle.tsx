@@ -11,7 +11,7 @@ export const Subtitle = ({ children }: Props) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      className="text-lg text-neutral-600 text-center max-w-3xl mx-auto border"
+      className="text-lg text-neutral-600 text-center max-w-3xl mx-auto"
     >
       {children}
     </motion.span>
