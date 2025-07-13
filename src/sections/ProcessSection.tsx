@@ -73,7 +73,7 @@ const ProcessSection = () => {
         Un enfoque estructurado que garantiza resultados excepcionales en cada
         proyecto.
       </Subtitle>
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 mt-8">
         <div className="relative max-w-6xl mx-auto">
           <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gray-200 transform -translate-y-1/2 hidden md:block">
             <motion.div
